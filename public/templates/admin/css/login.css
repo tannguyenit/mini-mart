@@ -1,0 +1,122 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #333;
+}
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.login-form {
+  width: 300px;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  padding: 10px 25px;
+  background: #eee;
+  border-bottom: 5px solid gray;
+  border-radius: 4px;
+}
+
+.login-face {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  border-radius: 100px;
+  margin: 0 auto;
+  margin-top: 75px;
+  overflow: hidden;
+}
+.login-face img {
+  width: 100px;
+  height: 100px;
+}
+
+.form {
+  width: 100%;
+  position: relative;
+  margin: 25px auto;
+}
+
+.form-input {
+  width: 100%;
+  height: 50px;
+  position: relative;
+  margin: 15px auto;
+}
+.form-input .fa {
+  position: absolute;
+  top: 16px;
+  right: 5px;
+  font-size: 20px;
+  color: gray;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  height: 50px;
+  position: relative;
+  outline: none;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  color: gray;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border: 2px solid #0ac986;
+}
+
+.btn {
+  width: 100%;
+  height: 50px;
+  color: #fff;
+  border: 0;
+  outline: none;
+  background: #0ac986;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.lost-pass {
+  float: right;
+  margin-bottom: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: gray;
+  text-decoration: none;
+}
+
+.error-msg {
+  display: none;
+  font-family: Arial, sans-serif;
+  color: red;
+  margin-top: 50px;
+}
+
+.error {
+  position: relative;
+  animation: shake 0.25s;
+}
+
+@keyframes shake {
+  0%, 100% {
+    left: 0;
+  }
+  20%, 80% {
+    left: -15px;
+  }
+  40%, 60% {
+    left: 15px;
+  }
+}
