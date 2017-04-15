@@ -256,11 +256,8 @@
             },
             success:function(data) {
                 $('.top_cart_qty').html(data);
-                $.smkAlert({
-                    text: name + '<strong>    '+price+'</strong>',
-                    type: 'success',
-                    position:'top-right',
-                });
+                 $(".alert-success").removeClass("in").show();
+                 $(".alert-success").delay(2000).addClass("in").fadeOut(3000);
             }
         })
     });
@@ -277,7 +274,7 @@
 <script src="{{ asset('templates/public/js/custom.js') }}" type="text/javascript"></script>
 <script src='{{ asset('templates/public/js/smoke.min.js') }}'></script>
 <script src="{{ asset('templates/public/js/slick.js') }}" type="text/javascript"></script>
-<script src="{{ asset('templates/public/js/functions.js') }}" type="text/javascript"></script>
+{{-- <script src="{{ asset('templates/public/js/functions.js') }}" type="text/javascript"></script> --}}
 <script src="{{ asset('templates/public/js/jgrowl.js') }}" type="text/javascript"></script>
 <script src="{{ asset('templates/public/js/additional_scripts.js') }}" type="text/javascript"></script>
 <script src="{{ asset('templates/public/js/custom_js.js') }}" type="text/javascript"></script>

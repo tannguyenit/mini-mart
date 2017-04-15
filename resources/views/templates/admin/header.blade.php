@@ -30,37 +30,36 @@
         <div class="left_col scroll-view">
           <div class="navbar nav_title">
             <a href="/" target="_blank" class="site_title">
-            <i class="fa fa-external-link-square"></i> <span>Mini-Mart</span></a>
-          </div>
-          <div class="clearfix"></div>
-          <div class="profile">
-            <div class="profile_pic">
-              <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+              <i class="fa fa-external-link-square"></i> <span>Mini-Mart</span></a>
             </div>
-            <div class="profile_info">
-              <span>Welcome,</span>
-              <h2>{{ Auth::user()->fullname }}</h2>
+            <div class="clearfix"></div>
+            <div class="profile">
+              <div class="profile_pic">
+                <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+              </div>
+              <div class="profile_info">
+                <span>Welcome,</span>
+                <h2>{{ Auth::user()->fullname }}</h2>
+              </div>
             </div>
-          </div>
-          <br/>
-          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-            <div class="menu_section">
-              <h3>General</h3>
-              <ul class="nav side-menu">
-                <li><a href="/admin/index" ><i class="fa fa-home"></i> Home </a></li>
-                <li><a href="/admin/product/index"><i class="fa fa-edit"></i> Mananger Product </a>
-                </li>
-                <li><a href="/admin/order/index"><i class="fa fa-edit"></i> Mananger Order </a>
-                </li>
-                <li><a href="/admin/category/index"><i class="fa fa-desktop"></i>Mananger Category</a>
-                </li>
-                <li><a href="/admin/user/index"><i class="fa fa-table"></i> Mananger User </a>
-                </li>
-                <li><a href="/admin/contact/index"><i class="fa fa-bar-chart-o"></i> Contact</a>
-                </li>
-                <li><a href="/admin/slide/design"><i class="fa fa-bar-chart-o"></i> Design</a>
-                </li>
-                <li><a><i class="fa fa-clone"></i>Images <span class="fa fa-chevron-down"></span></a>
+            <br/>
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <h3>General</h3>
+                <ul class="nav side-menu">
+                  <li><a href="/admin/index" ><i class="fa fa-home"></i> Home </a></li>
+                  <li><a href="/admin/product/index"><i class="fa fa-edit"></i> Mananger Product </a>
+                  </li>
+                  <li><a href="/admin/order/index"><i class="fa fa-edit"></i> Mananger Order </a>
+                  </li>
+                  <li><a href="/admin/category/index"><i class="fa fa-desktop"></i>Mananger Category</a>
+                  </li>
+                  <li><a href="/admin/user/index"><i class="fa fa-table"></i> Mananger User </a>
+                  </li>
+                  <li><a href="/admin/contact/index"><i class="fa fa-bar-chart-o"></i> Contact</a>
+                  </li>
+
+   {{--              <li><a><i class="fa fa-clone"></i>Images <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
                     <li><a href="/admin/slide/header">Slide header</a></li>
                     <li><a>Category<span class="fa fa-chevron-down"></span></a>
@@ -72,7 +71,7 @@
                       </ul>
                     </li>
                   </ul>
-                </li>
+                </li> --}}
                 <li><a><i class="fa fa-bug"></i> Orther <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
                     <li><a href="/admin/other/news">News</a></li>
@@ -134,8 +133,13 @@
         </div>
       </div>
       <div class="right_col" role="main">
-          <div class="x_content bs-example-popovers">
-            <div class="col-xs-12" id="message">
-             @include('templates.admin.thongbao')
-           </div>
+        <div class="x_content bs-example-popovers">
+          <div class="col-xs-12" id="message">
+           @include('templates.admin.thongbao')
          </div>
+       </div>  <div class="right_col" role="main">
+       <div class="x_content bs-example-popovers">
+        @foreach ($errors->all() as $error)
+        <li>{!! $error !!}</li>
+        @endforeach
+      </div>

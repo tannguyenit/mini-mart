@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CategoryRequest;
 use App\Models\Cat;
 use Input;
 use Request;
@@ -25,7 +26,7 @@ class CategoryController extends Controller
         }
     }
 
-    public function postadd(Request $request)
+    public function postadd(CategoryRequest $request)
     {
         $picture = '';
         if (Request::file('icon') != null) {

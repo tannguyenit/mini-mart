@@ -135,7 +135,7 @@
     </div>
     <p>Để kiểm tra trạng thái đơn hàng, Anh/chị vui lòng:</p>
     <div style="font-size:18px">
-        <a href="{{ action('UserController@login') }}" style="padding:15px;background-color:#7fc142;color:#fff" target="_blank">Đăng nhập vào tài khoản</a>
+        <a href="{{ action('Auth\LoginController@login') }}" style="padding:15px;background-color:#7fc142;color:#fff" target="_blank">Đăng nhập vào tài khoản</a>
     </div> &nbsp;
     <hr>
     <p style="text-align:right">

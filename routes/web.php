@@ -26,6 +26,14 @@ Route::get('checkout', ['as' => 'cart.checkout', 'uses' => 'CartController@check
 Route::post('order', ['as' => 'cart.order', 'uses' => 'CartController@order']);
 Route::get('login', ['as' => 'auth.auth.getlogin', 'uses' => 'Auth\LoginController@login']);
 Route::post('login', ['as' => 'auth.auth.login', 'uses' => 'Auth\LoginController@postLogin']);
+Route::get('logout', [
+    'as' => 'logout',
+    function () {
+        Session::flush();
+        return redirect()->action('IndexController@index');
+    },
+
+]);
 Route::post('register', ['as' => 'auth.auth.register', 'uses' => 'Auth\RegisterController@postRegister']);
 Route::get('search', ['as' => 'search', 'uses' => 'ProductController@search']);
 

@@ -129,7 +129,7 @@ class CartController extends Controller
                 'product_id' => $value->id,
                 'quantity' => $value->qty,
             ];
-            OrderDetail::create($arOrderrderDetail);
+            OrderDetail::create($arOrderDetail);
         }
 
         $data = [

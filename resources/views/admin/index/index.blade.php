@@ -15,17 +15,7 @@
         <div class="count green">{{ $countOder }}</div>
     </div>
 </div>
-<div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12">
-        <div class="dashboard_graph">
-            <div class="row x_title">
-                <div class="col-md-6">
-                    <h3> Biểu đồ sản phẩm<small>Graph title sub-title</small></h3>
-                </div>
-            </div>
-
-            <div class="clearfix"></div>
-        </div>
-    </div>
+<div>
+    <img src="http://localhost:8000/storage/d60c0d55df00d4309d18f7d4831240ed.jpeg" alt="" style="width: 100%;">
 </div>
 @stop

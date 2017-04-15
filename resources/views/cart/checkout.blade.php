@@ -90,9 +90,9 @@
                             </div>
                             @if (Auth::guest())
                             <div class="form-group">
-                                <a href="{{ action('UserController@register') }}">Đăng ký tài khoản mua hàng</a>
+                                <a href="{{ action('Auth\LoginController@login') }}">Đăng ký tài khoản mua hàng</a>
                                 <span style="padding: 0 5px;">/</span>
-                                <a href="{{ action('UserController@login') }}">Đăng nhập </a>
+                                <a href="{{ action('Auth\LoginController@login') }}">Đăng nhập </a>
                             </div>
                             <hr class="divider">
                             <div class="form-group">

@@ -58,7 +58,7 @@
             </div>
             <div id="register">
                 <div class="acctitle"><i class="acc-closed fa fa-user"></i><i class="acc-open fa fa-check-circle"></i>Người dùng mới? Đăng ký tài khoản</div>
-                <div class="acc_content clearfix" style="display: none;">
+                <div class="acc_content clearfix" >
                     <form accept-charset="UTF-8" action="{{ action('Auth\RegisterController@postRegister') }}" id="customer_register" method="post" data-toggle="validator">
                      {{ csrf_field() }}
                         <input name="FormType" value="customer_register" type="hidden">

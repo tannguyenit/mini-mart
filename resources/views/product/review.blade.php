@@ -97,7 +97,6 @@
 		else {
 			quantity = max;
 		}
-		alert(quantity)
 		$('#AddToCartFormQv #product_quantity').val(quantity)
 	});
 	$('#carousel-example-generic > div:nth-child(1) > div:nth-child(1)').addClass('active')

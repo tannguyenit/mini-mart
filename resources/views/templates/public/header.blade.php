@@ -76,7 +76,7 @@
                         <li><a href="{{ route('promotion.index') }}">Khuyến mãi</a> </li>
                         <li>
                             @if (Auth::user())
-                            <li><a href="{{ route('admin.index.index') }}" target="_blank">{{ Auth::user()->fullname }}</a> </li>
+                            <li><a href="{{ route('logout') }}" target="_blank">{{ Auth::user()->fullname }} > Logout</a> </li>
                             @else
                             <a href='{{ route('auth.auth.getlogin') }}'>Tài khoản</a>
                             @endif
@@ -147,7 +147,16 @@
                         <img alt='' src='{{ asset('images/top_hotline.png') }} ' /> </a>
                     </div>
                 </div>
+                            <div class="span4 pull-right" style="position: absolute;
+top: 90px;
+right: 0;">
+    <div class="alert alert-success fade">
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      Bạn đã đặt hàng thành công
+    </div>
+  </div>
             </header>
+
             <div class="container slide_wrapper">
                 <div class="panel-group left_menu" id="left_menu">
                     <div class="panel-heading">
@@ -252,15 +261,7 @@
                                     <button class="right carousel-control slick-next slick-arrow" href="#myCarousel" role="button" data-slide="next" type="button"  style="display: block;"><i class="fa fa-angle-right"></i>
                                     </button>
                                 </section>
-                                <script>
-                                    $(document).ready(function() {
-                                        $('#slider').slick({
-                                            prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-angle-left"></i></button>',
-                                            nextArrow: '<button type="button" class="slick-next"><i class="fa fa-angle-right"></i></button>',
-                                            asNavFor: '.slider_thumb',
-                                        });
-                                    })
-                                </script>
+
                                 <div class="banner_top nopadding hidden-sm hidden-xs">
                                     <a href="http://minimart/gia-dung">
                                         <img alt="/gia-dung" src="{{ asset(Storage::url('banner_top_1.jpg')) }}">
@@ -311,3 +312,4 @@
                       </div>
                       @endif
                       @endif
+
