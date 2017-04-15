@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Promotion extends Model
 {
-    protected $table = 'promotion';
+    protected $table = 'promotions';
     protected $primaryKey = 'id';
     protected $fillable = ['images', 'title', 'content', 'user_id'];
     public $timestamps = true;
