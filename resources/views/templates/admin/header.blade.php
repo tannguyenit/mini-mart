@@ -137,7 +137,7 @@
           <div class="col-xs-12" id="message">
            @include('templates.admin.thongbao')
          </div>
-       </div>  <div class="right_col" role="main">
+       </div>
        <div class="x_content bs-example-popovers">
         @foreach ($errors->all() as $error)
         <li>{!! $error !!}</li>
