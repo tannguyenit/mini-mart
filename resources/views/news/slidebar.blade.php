@@ -7,7 +7,7 @@
                 <div class="spost clearfix">
                     <div class="entry-image">
                         <a href="{{ route('promotion.detail',[str_slug($param['title']),$param['id']]) }}" class="nobg a-circle">
-                            <img class="img-circle-custom" src="{{ asset(Storage::url($param->image)) }}" alt="{{ $param->title }}">
+                            <img class="img-circle-custom" src="{{ asset('images/' . $param->image) }}" alt="{{ $param->title }}">
                         </a>
                     </div>
                     <div class="entry-c">

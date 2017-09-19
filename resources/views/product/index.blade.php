@@ -53,7 +53,7 @@
                                             <div class="product clearfix product_single">
                                                 <div class="product-image">
                                                     <a href="{{ route('product.detail',[Request::segment(1),str_slug($element->cat->name),str_slug($element->name),$element->id]) }}">
-                                                        <img alt="{{ $element->name }}" src="{{ asset(Storage::url($element->images)) }}" style="background: transparent none repeat scroll 0% 0%;">
+                                                        <img alt="{{ $element->name }}" src="{{ asset('images/' . $element->images) }}" style="background: transparent none repeat scroll 0% 0%;">
                                                     </a>
                                                     <div class="sale-flash">- {{ $element->sale }} %</div>
                                                     <div class="product-overlay">
@@ -96,7 +96,7 @@
                                 <div class="spost clearfix">
                                     <div class="entry-image">
                                         <a href="">
-                                            <img alt="{{ $element->name }}" src="{{ asset(Storage::url($element->images)) }}">
+                                            <img alt="{{ $element->name }}" src="{{ asset('images/' . $element->images) }}">
                                         </a>
                                     </div>
                                     <div class="entry-c">
@@ -121,7 +121,7 @@
                                 <div class="spost clearfix">
                                     <div class="entry-image">
                                         <a href="" title="{{ $element->name }}">
-                                            <img src="{{ asset(Storage::url($element->images)) }}" alt="{{ $element->name }}"  data-title="{{ $element->name }}" data-description="{{ $element->name }}">
+                                            <img src="{{ asset('images/' . $element->images) }}" alt="{{ $element->name }}"  data-title="{{ $element->name }}" data-description="{{ $element->name }}">
                                         </a>
                                     </div>
                                     <div class="entry-c">

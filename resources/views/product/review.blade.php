@@ -14,7 +14,7 @@
 										<div class="carousel-inner">
 											@foreach ($arProduct->proImage as $element)
 											<div class="item ">
-												<img src="{{ asset(Storage::url($element->images)) }}" class="img-responsive">
+												<img src="{{ asset('images/' . $element->images) }}" class="img-responsive">
 											</div>
 											@endforeach
 										</div>
@@ -26,7 +26,7 @@
 										</a>
 										<ul class="thumbnails-carousel clearfix">
 											@foreach ($arProduct->proImage as $element)
-											<li><img src="{{ asset(Storage::url($element->images)) }}"></li>
+											<li><img src="{{ asset('images/' . $element->images) }}" class="img-responsive"></li>
 											@endforeach
 										</ul>
 										<div class="sale-flash">-{{ $arProduct->sale }} %</div>

@@ -51,7 +51,6 @@ class LoginController extends Controller
             'password' => $request->password,
             'is_admin' => 1,
         ];
-
         if (Auth::attempt($login)) {
             return redirect()->action('admin\IndexController@index');
         } else {
@@ -68,11 +67,11 @@ class LoginController extends Controller
 
     public function postLogin(Request $request)
     {
-        $email = $request->email;
+        $email    = $request->email;
         $password = $request->password;
         if (Auth::attempt(
             [
-                'email' => $email,
+                'email'    => $email,
                 'password' => $password,
                 'is_admin' => 2,
             ]

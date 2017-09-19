@@ -5,13 +5,13 @@
     <div class="scroll_menu hidden-xs hidden-sm" id="myScrollspy">
         <ul class="nav nav-pills nav-stacked">
             @foreach ($arLeftbar as $element)
-            @php($color = '#' . substr(md5(rand()), 0, 6))
-            <li>
-                <a href="#index_col_group_{{ $element['id'] }}" data-href="#index_col_group_{{ $element['id'] }}">
-                    <img alt="{{ $element['name'] }}" src="{{ asset(Storage::url($element['icon'])) }}">
-                    <span class="scroll_tooltip_1" style="background-color: {{$color}}; color:#ffffff">{{ $element['name'] }}</span>
-                </a>
-            </li>
+                @php($color = '#' . substr(md5(rand()), 0, 6))
+                <li>
+                    <a href="#index_col_group_{{ $element['id'] }}" data-href="#index_col_group_{{ $element['id'] }}">
+                        <img alt="{{ $element['name'] }}" src="{{ asset('images/' . $element['icon']) }}">
+                        <span class="scroll_tooltip_1" style="background-color: {{$color}}; color:#ffffff">{{ $element['name'] }}</span>
+                    </a>
+                </li>
             @endforeach
         </ul>
     </div>
@@ -43,7 +43,6 @@
                     @php($arProducts = DB::table('products')->join('cats', 'cats.id', '=', 'products.cat_id')->whereIn('cat_id', function ($query) use ($id) {
                         $query->select('id')->from('cats')->where('parent_id', $id)->orWhere('id', $id)->get();
                     })->select('cats.name as namecat', 'products.*')->paginate(6))
-
                     @foreach ($arProducts as $value)
                     <div class="col-sm-4 col-xs-6 ">
                         <div class="product clearfix product_single">
@@ -56,7 +55,7 @@
                             </div>
                             <div class="product-image">
                                 <a href="{{ route('product.detail',[str_slug($element['name']), str_slug($value->namecat), str_slug($value->name), $value->id]) }}">
-                                    <img alt="{{ $value->name }}" src="{{ asset(Storage::url($value->images)) }}">
+                                    <img alt="{{ $value->name }}" src="{{ asset('images/'.$value->images) }}">
                                 </a>
                                 <div class="sale-flash">- {{ $value->sale }} %</div>
                                 <div class="product-overlay">

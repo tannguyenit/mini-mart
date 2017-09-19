@@ -27,7 +27,7 @@
                                                 <div class="carousel-inner pull-right" style="width: 66.67%">
                                                     @foreach ($arProduct->proImage as $element)
                                                     <div class="item ">
-                                                        <img src="{{ asset(Storage::url($element->images)) }}" class="img-responsive">
+                                                        <img src="{{ asset('images/' . $element->images) }}" class="img-responsive">
                                                     </div>
                                                     @endforeach
                                                 </div>

@@ -2,8 +2,8 @@
 
 namespace App\Http\ViewComposers;
 
-use App\Cat;
-use App\Slide;
+use App\Models\Cat;
+use App\Models\Slide;
 use Illuminate\Contracts\View\View;
 
 class ViewComposer

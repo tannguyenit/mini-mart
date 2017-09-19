@@ -48,7 +48,7 @@
 							<div class="mpost clearfix col-xs-6">
 								<div class="entry-image related-posts-img">
 									<a href="{{ route('news.detail',[str_slug($element['title']),$element['id']]) }}">
-										<img src="{{ asset(Storage::url($element['image'])) }}" alt="{{ $element['title'] }}">
+										<img src="{{ asset('images/' . $element['image']) }}" alt="{{ $element['title'] }}">
 									</a>
 								</div>
 								<div class="entry-c">

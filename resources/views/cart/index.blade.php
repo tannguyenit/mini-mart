@@ -18,7 +18,7 @@
                         <div class="cart_item row" id="{{ $element->rowId }}">
                             <div class="col-sm-1 td cart-product-thumbnail">
                                 <a href="{{ $element->options->url }}">
-                                    <img src="{{ asset(Storage::url($element->options->img )) }}" alt="{{ $element->name }}">
+                                    <img src="{{ asset('images/' . $element->options->img) }}" alt="{{ $element->name }}">
                                 </a>
                             </div>
                             <div class="col-sm-4 td cart-product-name">
@@ -46,7 +46,7 @@
                             </div>
                             <div class="col-md-3 col-xs-6 td col-sm-push-7">
                                 <span class="amount color lead">
-                                    <strong class="total_amount">{{ number_format(Cart::subtotal(), 0, ',', '.') }}</strong> VND
+                                    <strong class="total_amount">{{ Cart::subtotal() }}</strong> VND
                                 </span>
                             </div>
                         </div>

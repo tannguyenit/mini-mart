@@ -45,7 +45,7 @@
                                                 <li class="product product-has-image clearfix">
                                                     <div class="product-thumbnail pull-left">
                                                         <div class="product-thumbnail__wrapper">
-                                                            <img src="{{ asset(Storage::url($element->options->img)) }}" alt="{{ $element->name }}" class="product-thumbnail__image">
+                                                            <img src="{{ asset('images/' . $element->options->img) }}" alt="{{ $element->name }}" class="product-thumbnail__image">
                                                         </div>
                                                         <span class="product-thumbnail__quantity" >{{ $element->qty }}</span>
                                                     </div>
@@ -66,7 +66,7 @@
                                 <div class="summary-section border-top-none--mobile">
                                     <div class="total-line total-line-subtotal clearfix">
                                         <span class="total-line-name pull-left">Tạm tính</span>
-                                        <span class="total-line-subprice pull-right">{{ number_format(Cart::subtotal(), 0, ',', '.') }} VNĐ</span>
+                                        <span class="total-line-subprice pull-right">{{ Cart::subtotal() }} VNĐ</span>
                                     </div>
                                     <div class="total-line total-line-shipping clearfix">
                                         <span class="total-line-name pull-left">Phí vận chuyển</span>
@@ -74,7 +74,7 @@
                                     </div>
                                     <div class="total-line total-line-total clearfix">
                                         <span class="total-line-name pull-left">Tổng cộng</span>
-                                        <span class="total-line-price pull-right">{{ number_format(Cart::subtotal(), 0, ',', '.') }} VNĐ</span>
+                                        <span class="total-line-price pull-right">{{ Cart::subtotal() }} VNĐ</span>
                                     </div>
                                 </div>
                             </div>

@@ -113,7 +113,7 @@
         if (qty >=max) {
             var qty =  $(this).val(max)
         } else  if ( qty <= 0) {
-           if (confirm("Bạn chắc chắn muốn xóa")) {
+         if (confirm("Bạn chắc chắn muốn xóa")) {
             $.ajax({
                 url: '/removecart',
                 type: "POST",
@@ -236,9 +236,9 @@
     });
     $(document).ready(function () {
 
-    $('#moal_alert').modal('show');
+        $('#moal_alert').modal('show');
 
-});
+    });
     $(document).on('click', '.add_to_cart', function(e){
         e.preventDefault();
         var name = $(this).data('name');
@@ -256,8 +256,8 @@
             },
             success:function(data) {
                 $('.top_cart_qty').html(data);
-                 $(".alert-success").removeClass("in").show();
-                 $(".alert-success").delay(2000).addClass("in").fadeOut(3000);
+                $(".alert-success").removeClass("in").show();
+                $(".alert-success").delay(2000).addClass("in").fadeOut(3000);
             }
         })
     });
@@ -279,6 +279,5 @@
 <script src="{{ asset('templates/public/js/additional_scripts.js') }}" type="text/javascript"></script>
 <script src="{{ asset('templates/public/js/custom_js.js') }}" type="text/javascript"></script>
 <script src="{{ asset('templates/public/checkout/validator.js') }}" type="text/javascript"></script>
-<div>
 </body>
 </html>

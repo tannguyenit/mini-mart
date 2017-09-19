@@ -18,7 +18,7 @@
 						<div class="entry clearfix">
 							<div class="entry-image">
 								<a href="{{ route('news.detail',[str_slug($element['title']),$element['id']]) }}">
-									<img class="image_fade" src="{{ asset(Storage::url($element['image'])) }}" alt="{{$element['title']}}">
+									<img class="image_fade" src="{{ asset('images/' . $element['image']) }}" alt="{{$element['title']}}">
 								</a>
 							</div>
 							<div class="entry-c">

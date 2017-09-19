@@ -37,7 +37,7 @@ Route::get('logout', [
 Route::post('register', ['as' => 'auth.auth.register', 'uses' => 'Auth\RegisterController@postRegister']);
 Route::get('search', ['as' => 'search', 'uses' => 'ProductController@search']);
 
-Route::group(["prefix" => "admin", 'namespace' => 'admin', 'middleware' => 'admin'], function () {
+Route::group(["prefix" => "admin", 'namespace' => 'Admin', 'middleware' => 'admin'], function () {
     Route::get("/", ["as" => "admin.index.index", "uses" => "IndexController@index"]);
     Route::get("/index", ["as" => "admin.index.index", "uses" => "IndexController@index"]);
     Route::group(["prefix" => "category"], function () {
