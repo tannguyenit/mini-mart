@@ -27,7 +27,7 @@
 								</div>
 								<ul class="entry-meta clearfix">
 									<li><i class="fa fa-calendar"></i>{{ $element['created_at'] }}</li>
-									<li><i class="fa fa-user"></i>{{ $element->user->fullname }}</li>
+									<li><i class="fa fa-user"></i>{{ $element->user->fullname or '' }}</li>
 								</ul>
 								<div class="entry-content">
 								<a href="{{ route('news.detail',[str_slug($element['title']),$element['id']]) }}" class="more-link">Xem tiếp</a>

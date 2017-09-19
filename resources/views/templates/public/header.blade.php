@@ -10,28 +10,28 @@
     <meta property="og:url" content="{{ Request::url() }}">
     <meta property="og:site_name" content="Mini Market">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    {{-- <link href="{{ asset('templates/public/css/css.css') }}" rel="stylesheet" type="text/css"> --}}
+    <link href="{{ asset('templates/public/css/css.css') }}" rel="stylesheet" type="text/css">
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-    {{-- <link href='{{ asset('templates/public/css/smoke.min.css') }}' rel='stylesheet' type="text/css"> --}}
+    <link href='{{ asset('templates/public/css/smoke.min.css') }}' rel='stylesheet' type="text/css">
 
-    {{-- <link href="{{ asset('templates/public/css/jquery.css') }}" rel="stylesheet" type="text/css"> --}}
+    <link href="{{ asset('templates/public/css/jquery.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('templates/public/css/style.css') }}" rel="stylesheet" type="text/css">
-    {{-- <link href="{{ asset('templates/public/css/dark.css') }}" rel="stylesheet" type="text/css"> --}}
-    {{-- <link href="{{ asset('templates/public/css/jgrowl.css') }}" rel="stylesheet" type="text/css"> --}}
-    {{-- <link href="{{ asset('templates/public/css/responsive.css') }}" rel="stylesheet" type="text/css"> --}}
+    <link href="{{ asset('templates/public/css/dark.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('templates/public/css/jgrowl.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('templates/public/css/responsive.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('templates/public/css/slick.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('templates/public/css/custom_style.css') }}" rel="stylesheet" type="text/css">
 
-    {{-- <script type="text/javascript" src="{{ asset('templates/public/js/script.js') }}"></script> --}}
-    {{-- <script type="text/javascript" src="{{ asset('templates/public/js/popup-script.js') }}"></script> --}}
-    {{-- <script type="text/javascript" src="{{ asset('templates/public/js/analytics.js') }}"></script> --}}
-    {{-- <script type="text/javascript" src="{{ asset('templates/public/js/gtm.js') }}"></script> --}}
-    {{-- <script type="text/javascript" src="{{ asset('templates/public/js/52691.js') }}"></script> --}}
-    {{-- <script type="text/javascript" src="{{ asset('templates/public/js/bizweb_stats.js') }}"></script> --}}
+    <script type="text/javascript" src="{{ asset('templates/public/js/script.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('templates/public/js/popup-script.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('templates/public/js/analytics.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('templates/public/js/gtm.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('templates/public/js/52691.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('templates/public/js/bizweb_stats.js') }}"></script>
     <script type="text/javascript" src="{{ asset('templates/public/js/jquery_002.js') }}"></script>
     <script type="text/javascript" src="{{ asset('templates/public/js/bootstrap.js') }}" ></script>
     <div id="fb-root"></div>
@@ -122,13 +122,14 @@
                                     </div>
                                     <div class="top-cart-item-desc">
                                         <a href="{{ $element->options->url }}">{{ $element->name }}</a>
-                                        <span class="top-cart-item-price">{{ number_format($element->price * $element->qty, '0', ',', '.') }} VND</span>
+                                        {{-- <span class="top-cart-item-price">{{ number_format($element->price * $element->qty, '0', ',', '.') }} VND</span> --}}
                                         <span class="top-cart-item-quantity">x {{ $element->qty }}</span>
                                     </div>
                                 </div>
                                 @endforeach
                             </div>
-                            <div class="top-cart-action clearfix"> <span class="fleft top-checkout-price">{{ number_format(Cart::subtotal(), 0, ',', '.') }} VND</span>
+                            <div class="top-cart-action clearfix">
+{{-- <span class="fleft top-checkout-price">{{ number_format(Cart::subtotal(), 0, ',', '.') }} VND</span> --}}
                                 <button onclick="window.location.href=&quot;/cart&quot;" class="button button-small nomargin fright">Xem giỏ hàng</button>
                             </div>
                         </div>
