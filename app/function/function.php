@@ -50,7 +50,7 @@ function changeTitle($str)
 function cat_parent($data, $parent = 0, $str = "-", $select = 0)
 {
     foreach ($data as $key => $value) {
-        $id = $value["id"];
+        $id   = $value["id"];
         $name = $value["name"];
         if ($value["parent_id"] == $parent) {
             if (0 != $select && $select == $id) {
@@ -88,7 +88,7 @@ function showCat_header($id, $nameCat)
     if ($arCount > 0) {
         echo '<ul>';
         $categories = DB::table('cats')->where('parent_id', $id)->get()->toArray();
-        $array = json_decode(json_encode($categories), true);
+        $array      = json_decode(json_encode($categories), true);
         foreach ($array as $key => $item) {
             $url = str_slug($nameCat) . '/' . str_slug($item['name']) . '-' . $item['id'];
             if ($item['parent_id'] == $id) {
@@ -106,7 +106,7 @@ function showCat_header($id, $nameCat)
 function leftbar($id, $name)
 {
     $categories = DB::table('cats')->where('parent_id', $id)->take(6)->get()->toArray();
-    $array = json_decode(json_encode($categories), true);
+    $array      = json_decode(json_encode($categories), true);
 
     foreach ($array as $key => $item) {
         $url = str_slug($name) . '/' . str_slug($item['name']) . '-' . $item['id'];
@@ -132,8 +132,8 @@ function getImages($images)
 function getImagesList($images)
 {
     if ($images) {
-        if (file_exists(public_path('storage/') . $images)) {
-            return "<img class='image_slide' src='" . asset(Storage::url($images)) . "'>";
+        if (file_exists(public_path('images/') . $images)) {
+            return "<img class='image_slide' src='" . '/images/' . $images . "'>";
         }
     }
 

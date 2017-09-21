@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Cat;
 use App\Models\Product;
 use App\Models\ProductImage;
+use Auth;
 use DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
@@ -60,7 +61,7 @@ class ProductController extends Controller
     {
         $picture = '';
         if (Request::file('hinhanh') != null) {
-            $picture = $this->uploadImage(Request::file('hinhanh', '/images'));
+            $picture = $this->uploadImage(Request::file('hinhanh'), '/images');
         }
         $arProduct = [
             'name'        => Request::Input('name'),
@@ -116,7 +117,7 @@ class ProductController extends Controller
         $picture  = $arUpdate['images'];
         if (Request::file('hinhanh') != null) {
             Storage::delete("images/" . $picture);
-            $picture = $this->uploadImage(Request::file('hinhanh', '/images'));
+            $picture = $this->uploadImage(Request::file('hinhanh'), '/images');
         };
 
         $arUpdate = [
@@ -129,7 +130,7 @@ class ProductController extends Controller
             'images'      => $picture,
             'keyword'     => changeTitle(Request::Input('name')),
             'description' => changeTitle(Request::Input('name')),
-            'user_id'     => 1, //Auth::user()->id,
+            'user_id'     => Auth::user()->id,
             'cat_id'      => Request::Input('cat_id'),
         ];
         if (DB::table('products')->where('id', $id)->update($arUpdate)) {
